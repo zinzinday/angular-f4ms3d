@@ -1,0 +1,11 @@
+<mat-dialog-content>
+  <p>
+    <span>Are you sure to delete</span>
+    <span>{{!!name ? ' this ' : ''}}{{name}}</span>
+    <span>?</span>
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close]="false">No</button>
+  <button mat-raised-button [mat-dialog-close]="true" color="warn" style="margin-right: 1em">Yes</button>
+</mat-dialog-actions>

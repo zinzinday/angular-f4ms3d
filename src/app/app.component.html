@@ -1,0 +1,28 @@
+<mat-list>
+  <mat-list-item *ngFor="let bank of banking">
+    <p matLine>{{bank.name}}</p>
+    <button mat-icon-button [matMenuTriggerFor]="itemActions" [matMenuTriggerData]="{item : account}">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>
+
+<br>
+<br>
+<br>
+
+<!--Action delete without ng-template EventEmitter Fired-->
+<button mat-button
+        alert-confirm name="banking" (onConfirmed)="onDelete(banking[0])">
+  <mat-icon color="warn">delete</mat-icon>
+  Delete
+</button>
+<!--Action delete with ng-template EventEmitter not firing-->
+<mat-menu #itemActions="matMenu" xPosition="before" yPosition="below">
+  <ng-template matMenuContent let-item="item">
+    <button mat-menu-item alert-confirm name="banking" (onConfirmed)="onDelete(item)">
+      Delete
+    </button>
+  </ng-template>
+</mat-menu>
