@@ -11,17 +11,26 @@
 <br>
 <br>
 <br>
-
-<!--Action delete without ng-template EventEmitter Fired-->
+<!--Action delete with ng-template EventEmitter Fired-->
+<ng-container [ngTemplateOutlet]="a"></ng-container>
+<ng-template #a>
 <button mat-button
-        alert-confirm name="banking" (onConfirmed)="onDelete(banking[0])">
+        alert-confirm 
+        name="banking" 
+        (onConfirmed)="onDelete(banking[0])">
   <mat-icon color="warn">delete</mat-icon>
   Delete
 </button>
-<!--Action delete with ng-template EventEmitter not firing-->
-<mat-menu #itemActions="matMenu" xPosition="before" yPosition="below">
+</ng-template>
+<!--Action delete with ng-template and mat-menu then EventEmitter not firing-->
+<!-- I need this case to use mat-menu lazy load item in mat-list in my project-->
+<!-- Please help to me! Thanks advanced-->
+<mat-menu #itemActions="matMenu">
   <ng-template matMenuContent let-item="item">
-    <button mat-menu-item alert-confirm name="banking" (onConfirmed)="onDelete(item)">
+    <button mat-menu-item 
+    alert-confirm 
+    name="banking" 
+    (onConfirmed)="onDelete(item)">
       Delete
     </button>
   </ng-template>
