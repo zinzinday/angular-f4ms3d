@@ -1,7 +1,7 @@
 <mat-list>
   <mat-list-item *ngFor="let bank of banking">
     <p matLine>{{bank.name}}</p>
-    <button mat-icon-button [matMenuTriggerFor]="itemActions" [matMenuTriggerData]="{item : account}">
+    <button mat-icon-button [matMenuTriggerFor]="itemActions" [matMenuTriggerData]="{item : bank}">
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-divider></mat-divider>
@@ -27,6 +27,7 @@
 <!-- Please help to me! Thanks advanced-->
 <mat-menu #itemActions="matMenu">
   <ng-template matMenuContent let-item="item">
+    <button mat-menu-item>{{item.name}}</button>
     <button mat-menu-item 
     alert-confirm 
     name="banking" 
