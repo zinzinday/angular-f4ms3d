@@ -11,7 +11,7 @@
 <br>
 <br>
 <br>
-<!--Action delete with ng-template EventEmitter Fired-->
+<!--Action delete with ng-template EventEmitter working normal-->
 <ng-container [ngTemplateOutlet]="a"></ng-container>
 <ng-template #a>
 <button mat-button
@@ -22,8 +22,8 @@
   Delete
 </button>
 </ng-template>
-<!--Action delete with ng-template and mat-menu then EventEmitter (onConfirmed)  not firing-->
-<!-- I need this case to use mat-menu lazy load item in mat-list in my project-->
+<!-- Action delete with ng-template and mat-menu then EventEmitter (onConfirmed)  not working. -->
+<!-- I need this case to use directive and mat-menu lazy list item in mat-list in my project-->
 <!-- Please help to me! Thanks advanced-->
 <mat-menu #itemActions="matMenu">
   <ng-template matMenuContent let-item="item">
